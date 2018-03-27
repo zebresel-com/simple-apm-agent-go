@@ -17,9 +17,6 @@ func middlewareOne(next http.Handler) http.Handler {
 func middlewareTwo(next http.Handler) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		log.Println("Executing middlewareTwo")
-		if r.URL.Path != "/" {
-			return
-		}
 		next.ServeHTTP(w, r)
 		log.Println("Executing middlewareTwo again")
 	})

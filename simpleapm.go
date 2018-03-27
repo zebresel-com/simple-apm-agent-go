@@ -85,6 +85,6 @@ func (self *Agent) Middleware(next http.Handler) http.Handler {
 				HttpCode: resp.StatusCode()}}
 
 		self.postHTTP(post)
-		//log.Printf("%.2fms\t| %d | %s: %s\n", timeBench, resp.StatusCode(), r.Method, r.URL)
+		log.Printf("%.2fms\t| %d | %s: %s\n", timeBench, resp.StatusCode(), r.Method, r.URL)
 	})
 }
